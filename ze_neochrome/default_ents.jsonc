@@ -1,0 +1,60 @@
+{
+	"modify": 
+	{
+		"match":
+		{
+			"classname": "info_player_counterterrorist"
+		},
+		"replace":
+		{
+			"origin": "9196.83 -1436.27 -1632.13",
+			"angles": "0 -90 0"
+		}
+	},
+	"modify":
+	{
+		"match":
+		{
+			"classname": "math_counter",
+			"targetname": "[PR#]nut_final_sphere_counter"
+		},
+		"insert":
+		{
+			"io": [
+				{
+					"outputname": "OnHitMin",
+					"targetname": "[PR#]nut_music3",
+					"inputname": "Stopsound"
+				}
+			]
+		}
+	},
+	"modify":
+	{
+		"match":
+		{
+			"classname": "logic_auto"
+		},
+		"delete":
+		{
+			"io":[
+				{
+					"outputname": "OnMapSpawn",
+					"targetname": "[PR#]nut_music_case",
+					"inputname": "PickRandom"
+				}
+			]
+		},
+		"insert":
+		{
+			"io":[
+				{
+					"outputname": "OnMapSpawn",
+					"targetname": "[PR#]nut_music3",
+					"inputname": "Startsound",
+					"limit": 1
+				}
+			]
+		}
+	}
+}

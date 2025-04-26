@@ -1,0 +1,86 @@
+{
+    "modify":
+    {
+        "match":
+        {
+            "classname": "logic_case",
+            "targetname": "[PR#]Level_Case"
+        },
+        "delete":
+        {
+            "io":[
+                {
+                    "outputname": "OnCase01",
+                    "targetname": "[PR#]Relay_warmup"
+                },
+                {
+                    "outputname": "OnCase02",
+                    "targetname": "[PR#]Relay_Level1"
+                },
+                {
+                    "outputname": "OnCase03",
+                    "targetname": "[PR#]Relay_Level2"
+                },
+                {
+                    "outputname": "OnCase04",
+                    "targetname": "[PR#]Relay_Level3"
+                }
+            ]
+        },
+        "insert":
+        {
+            "io":[
+                {
+                    "outputname": "OnCase01",
+                    "targetname": "[PR#]Relay_Level4",
+                    "inputname":  "Trigger",
+                    "limit":      "1"
+                },
+                {
+                    "outputname": "OnCase02",
+                    "targetname": "[PR#]Relay_Level4",
+                    "inputname":  "Trigger",
+                    "limit":      "1"
+                },
+                {
+                    "outputname": "OnCase03",
+                    "targetname": "[PR#]Relay_Level4",
+                    "inputname":  "Trigger",
+                    "limit":      "1"
+                },
+                {
+                    "outputname": "OnCase04",
+                    "targetname": "[PR#]Relay_Level4",
+                    "inputname":  "Trigger",
+                    "limit":      "1"
+                }
+            ]
+        }
+    },
+    "modify":
+    {
+        "match":
+        {
+            "classname": "info_teleport_destination",
+            "targetname": "[PR#]fixed_s4_teleport_dest01"
+        },
+        "replace":
+        {
+            "origin": "-4662.69 -14499.05 -8992.13",
+            "angles": "0 180 0"
+        }
+    },
+    "modify":
+    {
+        "match":
+        {
+            "classname": "info_teleport_destination",
+            "targetname": "[PR#]fixed_s4_teleport_dest02"
+        },
+        "replace":
+        {
+            "origin": "-4662.69 -14499.05 -8992.13",
+            "angles": "0 180 0"
+        }
+    }
+}
