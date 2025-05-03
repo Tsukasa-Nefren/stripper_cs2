@@ -1,0 +1,32 @@
+{
+	"modify": 
+	{
+		"match":
+		{
+			"classname": "info_player_counterterrorist"
+		},
+		"replace":
+		{
+			"origin": "-8344.44 4538.00 383.87",
+			"angles": "0 -180 0"
+		}
+	},
+    "modify":
+    {
+        "match":
+        {
+            "classname": "logic_auto"
+        },
+        "insert":
+        {
+            "io":[
+                {
+                    "outputname": "OnMapSpawn",
+                    "targetname": "[PR#]third_music",
+                    "inputname": "startsound",
+                    "limit": 1
+                }
+            ]
+        }
+    }
+}
