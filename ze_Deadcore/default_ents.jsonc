@@ -1,0 +1,161 @@
+{
+    "filter":
+    {
+        "targetname": "[PR#]level_case"
+    },
+    "filter":
+    {
+        "targetname": "[PR#]music_d_ex_way"
+    },
+    "filter":
+    {
+        "targetname": "[PR#]d_relay_1"
+    },
+	"modify": 
+	{
+		"match":
+		{
+			"classname": "info_player_counterterrorist"
+		},
+		"replace":
+		{
+			"origin": "-2.80 4047.11 219.87",
+			"angles": "0 90 0"
+		}
+	},
+    "modify":
+    {
+        "match":
+        {
+            "classname": "logic_auto"
+        },
+        "insert":
+        {
+            "io":[
+                {
+                    "outputname": "OnMapSpawn",
+                    "targetname": "[PR#]stage_d_ex_relay",
+                    "inputname": "Trigger",
+                    "limit": 0
+                }
+            ]
+        },
+        "delete":
+        {
+            "io":[
+                {
+                    "outputname": "OnMapSpawn",
+                    "targetname": "[PR#]level_counter",
+                    "inputname": "GetValue"
+                }
+            ]
+        },
+        "replace":
+        {
+            "io":[
+                {
+                    "outputname": "OnMapSpawn",
+                    "targetname": "[PR#]s_prelay1",
+                    "inputname": "Trigger",
+                    "Delay": 1
+                }
+            ]
+        }
+    },
+    "modify":
+    {
+        "match":
+        {
+            "targetname": "[PR#]d_ex_relay"
+        },
+        "insert":
+        {
+            "io":[
+                {
+                    "outputname": "OnTrigger",
+                    "targetname": "[PR#]escape_relay_ex",
+                    "inputname": "Trigger",
+                    "Delay": 1
+                }
+            ]
+        }
+    },
+    "modify":
+    {
+        "match":
+        {
+            "targetname": "[PR#]stage_d_ex_relay",
+            "classname": "logic_relay"
+        },
+        "insert":
+        {
+            "io":[
+                {
+                    "outputname": "OnMapSpawn",
+                    "targetname": "[PR#]d_ex_relay",
+                    "inputname": "Trigger",
+                    "Delay": 3,
+                    "limit": 1
+                },
+                {
+                    "outputname": "OnTrigger",
+                    "targetname": "[PR#]server",
+                    "inputname": "Command",
+                    "overrideparam": "host_timescale 4",
+                    "delay": 1,
+                    "limit": 1
+                },
+                {
+                    "outputname": "OnTrigger",
+                    "targetname": "[PR#]server",
+                    "inputname": "Command",
+                    "overrideparam": "host_timescale 1",
+                    "delay": 35,
+                    "limit": 1
+                }
+            ]
+        }   
+    },
+    "modify":
+    {
+        "match":
+        {
+            "targetname": "[PR#]escape_relay_prankd",
+            "classname": "logic_relay"
+        },
+        "insert":
+        {
+            "io":[
+                {
+                        "outputname": "OnTrigger",
+                        "targetname": "escape_common_relay",
+                        "inputname": "Trigger",
+                        "overrideparam": "",
+                        "delay": 0,
+                        "limit": -1
+                }
+            ]
+        }
+    },
+    "modify":
+    {
+        "match":
+        {
+            "targetname": "[PR#]escape_relay_ex",
+            "classname": "logic_relay"
+        },
+        "insert":
+        {
+            "io":[
+                {
+                        "outputname": "OnTrigger",
+                        "targetname": "escape_common_relay",
+                        "inputname": "Trigger",
+                        "overrideparam": "",
+                        "delay": 0,
+                        "limit": -1
+                }
+            ]
+        }
+    }
+}
