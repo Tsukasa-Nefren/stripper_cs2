@@ -1,0 +1,183 @@
+{
+    "modify":
+    {
+        "match":
+        {
+            "targetname": "[PR#]3_win_trigger",
+            "classname": "trigger_once"
+        },
+        "delete":
+        {
+            "io":
+            [
+                {
+                    "outputname": "OnStartTouch",
+                    "targetname": "[PR#]stagecounter",
+                    "inputname": "setvalue"
+                }
+            ]
+        }
+    },
+    "modify":
+    {
+        "match":
+        {
+            "classname": "logic_auto"
+        },
+        "insert":
+        {
+            "io":
+            [
+                {
+                    "outputname": "OnMapSpawn",
+                    "targetname": "[PR#]stagecounter",
+                    "inputname": "setvalue",
+                    "overrideparam": "5"
+                }
+            ]
+        }
+    },
+    "modify":
+    {
+        "match":
+        {
+            "classname": "info_player_counterterrorist"
+        },
+        "replace":
+        {
+            "origin": "11066 3592 627",
+            "angles": "0 0 0"
+        }
+    },
+    "modify":
+    {
+        "match":
+        {
+            "targetname": "[PR#]3_relay",
+            "classname": "logic_relay"
+        },
+        "delete":
+        {
+            "io":
+            [
+                {
+                    "outputname": "OnTrigger",
+                    "targetname": "[PR#]3_relays",
+                    "inputname": "Enable"
+                },
+                {
+                    "outputname": "OnTrigger",
+                    "targetname": "[PR#]3_start_particle",
+                    "inputname": "Start"
+                },
+                {
+                    "outputname": "OnTrigger",
+                    "targetname": "[PR#]3_particle0",
+                    "inputname": "Start"
+                },
+                {
+                    "outputname": "OnTrigger",
+                    "targetname": "[PR#]laserend_sound1",
+                    "inputname": "StartSound"
+                },
+                {
+                    "outputname": "OnTrigger",
+                    "targetname": "[PR#]level_text",
+                    "overrideparam": "- OVERDRIVE MODE -"
+                }
+            ]
+        },
+        "insert":
+        {
+            "io":
+            [
+                {
+                    "outputname": "OnTrigger",
+                    "targetname": "[PR#]laserend_sound1",
+                    "inputname": "StartSound",
+                    "delay": 0
+                },
+                {
+                    "outputname": "OnTrigger",
+                    "targetname": "[PR#]3_final_boss_relay",
+                    "inputname": "Trigger",
+                    "delay": 6.5
+                },
+                {
+                    "outputname": "OnTrigger",
+                    "targetname": "[PR#]3_final_door2",
+                    "inputname": "Break",
+                    "delay": 5
+                }
+            ]
+        }
+    },
+    "modify":
+    {
+        "match":
+        {
+            "targetname": "[PR#]3_win_trigger"
+        },
+        "delete":
+        {
+            "io":
+            [
+                {
+                    "outputname": "OnStartTouch",
+                    "overrideparam": "say ### I do not know why Minolila want to kill us ###"
+                },
+                {
+                    "outputname": "OnStartTouch",
+                    "overrideparam": "say ### Anyway, it should be safe here...... ###"
+                },
+                {
+                    "outputname": "OnStartTouch",
+                    "overrideparam": "say << No one expected that we would met the nightmare here at that time >>"
+                },
+                {
+                    "outputname": "OnStartTouch",
+                    "overrideparam": "say << But that is another story >>"
+                },
+                {
+                    "outputname": "OnStartTouch",
+                    "overrideparam": "say << Congratulation!!! >>"
+                },
+                {
+                    "outputname": "OnStartTouch",
+                    "overrideparam": "say << You have beaten OverDrive Mode!!! >>"
+                },
+                {
+                    "outputname": "OnStartTouch",
+                    "overrideparam": "say << Map by Misaka >>"
+                }
+            ]
+        },
+        "insert":
+        {
+            "io":
+            [
+                {
+                    "outputname": "OnStartTouch",
+                    "targetname": "[PR#]fade_white",
+                    "inputname": "Fade",
+                    "delay": 1,
+                    "limit": 1
+                },
+                {
+                    "outputname": "OnStartTouch",
+                    "targetname": "[PR#]3_win_nuke",
+                    "inputname": "Enable",
+                    "delay": 3,
+                    "limit": 1
+                },
+                {
+                    "outputname": "OnStartTouch",
+                    "targetname": "[PR#]zr_toggle_respawn",
+                    "inputname": "disable",
+                    "delay": 2,
+                    "limit": 1
+                }
+            ]
+        }
+    }
+}
