@@ -1,0 +1,66 @@
+{
+    "filter":
+    {
+        "targetname": "[PR#]Stage_Template_Easy"
+    },
+    "modify":
+    {
+        "match":
+        {
+            "classname": "logic_auto"
+        },
+        "insert":
+        {
+            "io":
+            [
+                {
+                    "outputname": "OnMapSpawn",
+                    "targetname": "[PR#]Stage_Template_Refrain",
+                    "inputname": "fireuser1"
+                },
+                {
+                    "outputname": "OnMapSpawn",
+                    "targetname": "[PR#]Stage_Ending_Refrain",
+                    "inputname": "Enable",
+                    "delay": 15
+                }
+            ]
+        }
+    },
+    "modify":
+    {
+        "match":
+        {
+            "targetname": "[PR#]Stage_Template_Refrain",
+            "classname": "point_template"
+        },
+        "delete":
+        {
+            "io":
+            [
+                {
+                    "outputname": "OnUser1",
+                    "targetname": "[PR#]TD_Spawn",
+                    "inputname": "KeyValue",
+                    "overrideparam": "origin 2048 13952 1528",
+                    "delay": 2,
+                    "limit": 1
+                }
+            ]
+        },
+        "insert":
+        {
+            "io":
+            [
+                {
+                    "outputname": "OnUser1",
+                    "targetname": "[PR#]TD_Spawn",
+                    "inputname": "KeyValue",
+                    "overrideparam": "origin 4.081133 -10898.862305 359.871246",
+                    "delay": 2,
+                    "limit": 1
+                }
+            ]
+        }
+    }
+}
