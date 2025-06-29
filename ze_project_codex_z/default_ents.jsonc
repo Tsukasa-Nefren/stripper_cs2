@@ -1,0 +1,100 @@
+{
+    "modify":
+    {
+        "match":
+        {
+            "classname": "info_player_counterterrorist"
+        },
+        "replace":
+        {
+            "origin": "-2.835388 13147.380859 -1422.395752"
+        }
+    },
+    "modify":
+    {
+        "match":
+        {
+            "classname": "logic_auto"
+        },
+        "delete":
+        {
+            "io":
+            [
+                {
+                    "outputname": "OnMapSpawn",
+                    "targetname": "[PR#]server_command",
+                    "overrideparam": "mp_freezetime 0"
+                },
+                {
+                    "outputname": "OnMapSpawn",
+                    "targetname": "[PR#]server_command",
+                    "overrideparam": "Say Special Thanks to Chrazini for Beautiful Letters!"
+                }
+            ]
+        },
+        "insert":
+        {
+            "io":
+            [
+                {
+                    "outputname": "OnMapSpawn",
+                    "targetname": "lvl_c_end",
+                    "inputname": "Trigger",
+                    "delay": 5.0
+                }
+            ]
+        }
+    },
+    "modify":
+    {
+        "match":
+        {
+            "targetname": "rfinal_laser_timer",
+            "classname": "logic_timer"
+        },
+        "replace":
+        {
+            "startdisabled": "false"
+        }
+    },
+    "filter":
+    {
+        "targetname": "[PR#]CodeX_Start"
+    },
+    "filter":
+    {
+        "targetname": "[PR#]Yellow_Start"
+    },
+    "filter":
+    {
+        "targetname": "[PR#]Purple_Start"
+    },
+    "filter":
+    {
+        "targetname": "[PR#]Blue_Start"
+    },
+    "filter":
+    {
+        "targetname": "[PR#]Red_Start"
+    },
+    "filter":
+    {
+        "targetname": "[PR#]Blue_Entities_Kill"
+    },
+    "filter":
+    {
+        "targetname": "[PR#]Yellow_Entities_Kill"
+    },
+    "filter":
+    {
+        "targetname": "[PR#]Purple_Entities_Kill"
+    },
+    "filter":
+    {
+        "targetname": "[PR#]CodeX_Entities_Kill"
+    },
+    "filter":
+    {
+        "targetname": "[PR#]Red_Entities_Kill"
+    }
+}
